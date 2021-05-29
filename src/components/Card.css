@@ -1,0 +1,49 @@
+.card {
+	width: 18rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	box-shadow: 0rem 0.15rem 0.3rem #3333;
+}
+
+.card:hover {
+	transform: traslateY(-4px);
+	box-shadow: 0.75rem 1.5rem 3rem #3333;
+}
+
+.card:active {
+	transform: translateY(-1px);
+	box-shadow: 0 0.75rem 1.5rem #3333;
+}
+
+.card__img {
+	width: 100%;
+	height: 12rem;
+	overflow: hidden;
+}
+
+.card__title {
+	font-size: 1.4rem;
+	text-align: center;
+	color: #111111;
+}
+
+.card__subtitle {
+	font-size: 1rem;
+	text-align: center;
+	color: #666666;
+}
+
+.card__text {
+	padding-top: 0.5rem;
+	font-size: 1.1rem;
+	letter-spacing: 0.25px;
+	text-align: center;
+	color: #222222;
+}
+
+.card__footer {
+	font-size: 1rem;
+	letter-spacing: 0.5px;
+	font-weight: 500;
+	color: #222222;
+}

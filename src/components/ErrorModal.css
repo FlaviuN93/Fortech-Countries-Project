@@ -1,0 +1,35 @@
+.modal {
+	.modal__header {
+		padding: 1rem;
+		background-color: #f2594b;
+	}
+
+	.modal__title {
+		font-size: 3rem;
+		margin: 0 auto;
+	}
+
+	.modal__h2 {
+		color: #444444;
+		font-weight: 500;
+		font-size: 2.75rem;
+		text-align: center;
+		margin: 1rem 0;
+	}
+
+	.modal__p {
+		color: #989898;
+		text-align: center;
+		font-size: 1.6rem;
+		margin-bottom: 2rem;
+	}
+
+	.modal__button {
+		width: 15rem;
+		height: 4rem;
+		color: #ffff;
+		font-weight: 500;
+		font-size: 1.6rem;
+		border-radius: 20px;
+	}
+}
