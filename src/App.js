@@ -8,7 +8,8 @@ const App = () => {
 	return (
 		<Router>
 			<Route path='/' exact component={HomeScreen} />
-			<Route path='/:country/:id' component={CountryScreen} />
+			<Route path='/:country/:id' exact component={CountryScreen} />
+			<Route path='/search/:category/:keyword' exact component={HomeScreen} />
 		</Router>
 	);
 };

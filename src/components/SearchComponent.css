@@ -1,0 +1,20 @@
+.search_form {
+	display: flex;
+	padding: 1rem 1rem;
+	justify-content: center;
+	width: 100%;
+}
+
+.search_field {
+	padding: 1.25rem 0.25rem;
+
+	border: 2px solid #dddede;
+}
+.search_btn {
+	margin-left: 0.5rem;
+}
+
+#dropdown {
+	padding: 0.5rem 0.25rem;
+	margin-right: 1rem;
+}

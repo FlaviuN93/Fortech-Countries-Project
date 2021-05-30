@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import './Card.css';
+import './CardComponent.css';
 
 const CardComponent = ({ country }) => {
 	const { flag, capital, region, name, population, alpha3Code } = country;

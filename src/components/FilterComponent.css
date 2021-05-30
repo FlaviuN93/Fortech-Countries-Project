@@ -1,0 +1,27 @@
+.filter_card {
+	width: 12rem;
+}
+
+.filter_accordion {
+	box-shadow: 0 0.1rem 0.2rem #3333;
+	padding: 0.5rem 2rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	transition: all 0.3s;
+}
+
+.filter_accordion:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 0.2rem 0.4rem #3333;
+}
+.filter_accordion:active {
+	transform: translateY(-1px);
+	box-shadow: 0 0.1rem 0.2rem #3333;
+}
+
+.card_options {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: auto;
+	grid-gap: 1rem;
+}

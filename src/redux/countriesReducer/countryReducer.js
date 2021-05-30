@@ -1,16 +1,18 @@
 import Types from './countryTypes';
 
 const getCountriesReducer = (
-	state = { countries: [], loading: true },
+	state = { countries: [], loading: true, addFilterInfo: [] },
 	action
 ) => {
 	switch (action.type) {
 		case Types.GET_COUNTRIES_REQUEST:
-			return { ...state, loading: true };
+			return { loading: true, error: undefined };
 		case Types.GET_COUNTRIES_DETAILS:
-			return { ...state, loading: false, countries: action.payload };
+			return { loading: false, countries: action.payload };
 		case Types.GET_COUNTRIES_FAIL:
-			return { ...state, loading: false, error: action.payload };
+			return { loading: false, error: action.payload };
+		case Types.ADD_FILTER_INFO:
+			return { ...state, addFilterInfo: action.payload };
 		default:
 			return state;
 	}
@@ -19,14 +21,30 @@ const getCountriesReducer = (
 const getCountryReducer = (state = { country: {}, loading: true }, action) => {
 	switch (action.type) {
 		case Types.GET_COUNTRY_REQUEST:
-			return { ...state, loading: true };
+			return { loading: true, error: undefined };
 		case Types.GET_COUNTRY_DETAILS:
-			return { ...state, loading: false, country: action.payload };
+			return { loading: false, country: action.payload };
 		case Types.GET_COUNTRY_FAIL:
-			return { ...state, loading: false, error: action.payload };
+			return { loading: false, error: action.payload };
 		default:
 			return state;
 	}
 };
 
-export { getCountriesReducer, getCountryReducer };
+const filterCountryReducer = (
+	state = { countries: [], loading: true },
+	action
+) => {
+	switch (action.type) {
+		case Types.FILTER_REQUEST:
+			return { loading: true };
+		case Types.FILTER_SUCCESS:
+			return { loading: false, countries: action.payload };
+		case Types.FILTER_FAIL:
+			return { loading: false, error: action.payload };
+		default:
+			return state;
+	}
+};
+
+export { getCountriesReducer, getCountryReducer, filterCountryReducer };

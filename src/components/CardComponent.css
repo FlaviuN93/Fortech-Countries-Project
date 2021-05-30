@@ -1,18 +1,18 @@
 .card {
 	width: 18rem;
 	cursor: pointer;
-	transition: all 0.3s;
-	box-shadow: 0rem 0.15rem 0.3rem #3333;
+	transition: all 0.2s;
+	box-shadow: 0rem 0.15rem 0.3rem #bbbbbb;
 }
 
 .card:hover {
 	transform: traslateY(-4px);
-	box-shadow: 0.75rem 1.5rem 3rem #3333;
+	box-shadow: 0.2rem 0.75rem 1.5rem #bbbbbb;
 }
 
 .card:active {
 	transform: translateY(-1px);
-	box-shadow: 0 0.75rem 1.5rem #3333;
+	box-shadow: 0rem 0.5rem 1rem #bbbbbb;
 }
 
 .card__img {

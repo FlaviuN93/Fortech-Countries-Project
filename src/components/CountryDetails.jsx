@@ -16,19 +16,19 @@ const CountryDetails = ({ country, getCountryId }) => {
 				<LoadingSpinner />
 			) : (
 				<>
-					<Link className='btn btn-light my-3' to='/'>
+					<Link className='country_btn country_link' to='/'>
 						Go Back
 					</Link>
 
 					<div className='country'>
 						<div>
-							<img src={flag} alt='flag' className='flag_item' />
+							<img src={flag} alt='flag' className='country_img' />
 						</div>
-						<div style={{ justifySelf: 'start' }}>
+						<div className='country_body'>
 							<h1 className='country_title'>{name}</h1>
 
-							<div className='country_grid'>
-								<div className='country_col-1'>
+							<div className='country_details-grid'>
+								<div>
 									<p>
 										<strong>Region: </strong> {region}
 									</p>
@@ -51,7 +51,7 @@ const CountryDetails = ({ country, getCountryId }) => {
 										)}° long ]`}
 									</p>
 								</div>
-								<div className='country_col-2'>
+								<div>
 									<p>
 										<strong>Timezone: </strong> {timezones[0]}
 									</p>
