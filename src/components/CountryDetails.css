@@ -63,6 +63,14 @@ a.country_btn {
 	}
 }
 
+@media only screen and (max-width: 48.75em) {
+	.country_img {
+		height: 16rem;
+		width: 24rem;
+		box-shadow: 0.1rem 0.25rem 0.5rem #999999;
+	}
+}
+
 @media only screen and (max-width: 34.25em) {
 	.country_details-grid {
 		grid-template-columns: 1fr;

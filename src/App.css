@@ -1,6 +1,12 @@
 .main_container {
 	display: grid;
-	grid-template-columns: minmax(150px, 15%) 1fr;
+	grid-template-columns: minmax(140px, 15%) 1fr;
 	grid-auto-rows: auto;
 	background-color: #eeefef;
+}
+
+@media only screen and (max-width: 54.5em) {
+	.main_container {
+		grid-column-gap: 2rem;
+	}
 }
