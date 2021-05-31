@@ -12,12 +12,12 @@ const FilterComponent = ({ categoryNames, title, categoryId }) => {
 
 	useEffect(() => {
 		if (keyword !== '' && category !== '') {
+			dispatch(getFilteredCountries(category.toLowerCase(), keyword));
 		}
 	}, [dispatch, keyword, category]);
 
 	return (
 		<>
-
 			<Accordion defaultActiveKey='1'>
 				<Card className='filter_card'>
 					<Card.Header>
@@ -48,9 +48,6 @@ const FilterComponent = ({ categoryNames, title, categoryId }) => {
 					</Accordion.Collapse>
 				</Card>
 			</Accordion>{' '}
-
-		
-
 		</>
 	);
 };
