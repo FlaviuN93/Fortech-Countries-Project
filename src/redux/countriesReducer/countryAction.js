@@ -10,6 +10,7 @@ export const getAllCountries =
 			const { data } = await axios.get(
 				`https://restcountries.eu/rest/v2/${category}/${keyword}`
 			);
+
 			dispatch({ payload: data, type: Types.GET_COUNTRIES_DETAILS });
 		} catch (err) {
 			dispatch({ payload: err, type: Types.GET_COUNTRIES_FAIL });

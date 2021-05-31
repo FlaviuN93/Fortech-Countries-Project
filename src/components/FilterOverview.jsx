@@ -10,6 +10,7 @@ const FilterOverview = () => {
 
 	if (reset) {
 		dispatch({ type: Types.FILTER_RESET });
+		setReset(false);
 	}
 
 	return (

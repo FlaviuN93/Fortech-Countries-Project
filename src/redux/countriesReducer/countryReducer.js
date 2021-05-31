@@ -1,7 +1,7 @@
 import Types from './countryTypes';
 
 const getCountriesReducer = (
-	state = { countries: [], loading: true },
+	state = { countries: [], loading: true, addFilterInfo: [] },
 	action
 ) => {
 	switch (action.type) {
@@ -31,18 +31,27 @@ const getCountryReducer = (state = { country: {}, loading: true }, action) => {
 };
 
 const filterCountryReducer = (
-	state = { filteredCountries: [], loading: true },
+	state = {
+		filteredCountries: [],
+		loading: true,
+		success: false,
+		reset: false,
+	},
 	action
 ) => {
 	switch (action.type) {
 		case Types.FILTER_REQUEST:
 			return { loading: true };
 		case Types.FILTER_SUCCESS:
-			return { loading: false, filteredCountries: action.payload };
+			return {
+				loading: false,
+				filteredCountries: action.payload,
+				success: true,
+			};
 		case Types.FILTER_FAIL:
 			return { loading: false, error: action.payload };
 		case Types.FILTER_RESET:
-			return { filteredCountries: [], success: true };
+			return { loading: false, filteredCountries: [], reset: true };
 		default:
 			return state;
 	}
