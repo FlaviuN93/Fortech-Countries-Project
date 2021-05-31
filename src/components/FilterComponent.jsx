@@ -7,7 +7,6 @@ import './FilterComponent.css';
 const FilterComponent = ({ categoryNames, title }) => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
-
 	const dispatch = useDispatch();
 
 	useEffect(() => {

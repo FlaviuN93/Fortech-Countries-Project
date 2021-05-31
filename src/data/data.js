@@ -1,8 +1,12 @@
 const filterData = [
 	{
 		id: '1',
+		title: 'Region',
+		categoryNames: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
+	},
+	{
+		id: '2',
 		title: 'Currencies',
-
 		categoryNames: [
 			'Euro',
 			'Dollar',
@@ -14,22 +18,15 @@ const filterData = [
 		],
 	},
 	{
-		id: '2',
-		title: 'Region',
-		categoryNames: ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania'],
-	},
-	{
 		id: '3',
 		title: 'Languages',
-
 		categoryNames: [
 			'Russian',
-			'Portuguese ',
-			'Arabic ',
-			'Hindi ',
+			'Portuguese',
+			'Arabic',
 			'English',
-			'Spanish ',
-			'Chinese ',
+			'Spanish',
+			'Chinese',
 			'French',
 		],
 	},

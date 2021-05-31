@@ -1,18 +1,23 @@
 export const filterCountries = (countries, category, keyword) => {
-	const filteredCountries = countries.filter((country) => {
-		if (category === 'region') {
+	if (category === 'region') {
+		const filteredRegions = countries.filter((country) => {
 			return country.region === keyword;
-		} else if (category === 'currencies') {
-			const filterCurrency = country.currencies.some((currency) => {
-				return currency.name === keyword;
+		});
+		return filteredRegions;
+	} else if (category === 'currencies') {
+		const filteredCurrency = countries.filter((country) => {
+			return country.currencies.some((currency) => {
+				return currency.name.toLowerCase().includes(keyword.toLowerCase());
 			});
-			return filterCurrency;
-		} else if (category === 'languages') {
-			const filterLanguage = country.languages.some((language) => {
-				return language.name === keyword;
+		});
+		return filteredCurrency;
+	} else if (category === 'languages') {
+		const filteredLanguage = countries.filter((country) => {
+			return country.languages.some((language) => {
+				return language.name.toLowerCase().includes(keyword.toLowerCase());
 			});
-			return filterLanguage;
-		}
-	});
-	return filteredCountries;
+		});
+		return filteredLanguage;
+	}
+	return filterCountries;
 };
