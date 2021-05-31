@@ -31,20 +31,4 @@ const getCountryReducer = (state = { country: {}, loading: true }, action) => {
 	}
 };
 
-const filterCountryReducer = (
-	state = { countries: [], loading: true },
-	action
-) => {
-	switch (action.type) {
-		case Types.FILTER_REQUEST:
-			return { loading: true };
-		case Types.FILTER_SUCCESS:
-			return { loading: false, countries: action.payload };
-		case Types.FILTER_FAIL:
-			return { loading: false, error: action.payload };
-		default:
-			return state;
-	}
-};
-
-export { getCountriesReducer, getCountryReducer, filterCountryReducer };
+export { getCountriesReducer, getCountryReducer };

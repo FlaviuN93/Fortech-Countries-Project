@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import Types from '../redux/countriesReducer/countryTypes';
 import './FilterComponent.css';
 
-const FilterComponent = ({ categoryNames, title }) => {
+const FilterComponent = ({ categoryNames, title, categoryId }) => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
 	// const history = useHistory();
@@ -13,10 +13,7 @@ const FilterComponent = ({ categoryNames, title }) => {
 	const onClickHandler = (event) => {
 		event.preventDefault();
 		if (keyword !== '' && category !== '') {
-			dispatch({
-				type: Types.ADD_FILTER_INFO,
-				payload: [category.toLowerCase(), keyword.toLowerCase()],
-			});
+			dispatch();
 			// 		history.push(
 			// 			`/search/${category.toLowerCase()}/${keyword.toLowerCase()}`
 			// 		);
@@ -34,7 +31,7 @@ const FilterComponent = ({ categoryNames, title }) => {
 								variant='link'
 								className='filter_accordion'
 								style={{ textDecoration: 'none' }}
-								value={title}
+								value={categoryId}
 								onClick={(el) => setCategory(el.target.value)}
 								eventKey='0'>
 								{title}

@@ -27,5 +27,12 @@
 }
 
 @media only screen and (max-width: 40em) {
+	.filter_card {
+		width: 8rem;
+	}
 
+	.filter_accordion {
+		padding: 0.5rem;
+		font-size: 0.9rem;
+	}
 }
