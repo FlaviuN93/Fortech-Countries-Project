@@ -11,6 +11,7 @@ const Types = {
 	FILTER_SUCCESS: 'FILTER_SUCCESS',
 	FILTER_FAIL: 'FILTER_FAIL',
 	FILTER_RESET: 'FILTER_RESET',
+
 };
 
 export default Types;

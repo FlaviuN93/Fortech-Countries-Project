@@ -30,6 +30,7 @@ const getCountryReducer = (state = { country: {}, loading: true }, action) => {
 	}
 };
 
+
 const filterCountryReducer = (
 	state = {
 		filteredCountries: [],
@@ -58,3 +59,4 @@ const filterCountryReducer = (
 };
 
 export { getCountriesReducer, getCountryReducer, filterCountryReducer };
+

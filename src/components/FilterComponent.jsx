@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getFilteredCountries } from '../redux/countriesReducer/countryAction';
 import './FilterComponent.css';
 
-const FilterComponent = ({ categoryNames, title }) => {
+const FilterComponent = ({ categoryNames, title, categoryId }) => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
 
@@ -12,12 +12,12 @@ const FilterComponent = ({ categoryNames, title }) => {
 
 	useEffect(() => {
 		if (keyword !== '' && category !== '') {
-			dispatch(getFilteredCountries(category.toLowerCase(), keyword));
 		}
 	}, [dispatch, keyword, category]);
 
 	return (
 		<>
+
 			<Accordion defaultActiveKey='1'>
 				<Card className='filter_card'>
 					<Card.Header>
@@ -48,6 +48,9 @@ const FilterComponent = ({ categoryNames, title }) => {
 					</Accordion.Collapse>
 				</Card>
 			</Accordion>{' '}
+
+		
+
 		</>
 	);
 };
