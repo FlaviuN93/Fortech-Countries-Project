@@ -11,7 +11,6 @@ const FilterComponent = ({ categoryNames, title }) => {
 	const dispatch = useDispatch();
 	console.log(keyword, category);
 	const onClickHandler = (event) => {
-		event.preventDefault();
 		if (keyword !== '' && category !== '') {
 			dispatch(getFilteredCountries(category.toLowerCase(), keyword));
 		}
