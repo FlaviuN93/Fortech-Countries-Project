@@ -11,8 +11,7 @@ const getCountriesReducer = (
 			return { loading: false, countries: action.payload };
 		case Types.GET_COUNTRIES_FAIL:
 			return { loading: false, error: action.payload };
-		case Types.ADD_FILTER_INFO:
-			return { ...state, addFilterInfo: action.payload };
+
 		default:
 			return state;
 	}
@@ -31,4 +30,33 @@ const getCountryReducer = (state = { country: {}, loading: true }, action) => {
 	}
 };
 
-export { getCountriesReducer, getCountryReducer };
+
+const filterCountryReducer = (
+	state = {
+		filteredCountries: [],
+		loading: true,
+		success: false,
+		reset: false,
+	},
+	action
+) => {
+	switch (action.type) {
+		case Types.FILTER_REQUEST:
+			return { loading: true };
+		case Types.FILTER_SUCCESS:
+			return {
+				loading: false,
+				filteredCountries: action.payload,
+				success: true,
+			};
+		case Types.FILTER_FAIL:
+			return { loading: false, error: action.payload };
+		case Types.FILTER_RESET:
+			return { loading: false, filteredCountries: [], reset: true };
+		default:
+			return state;
+	}
+};
+
+export { getCountriesReducer, getCountryReducer, filterCountryReducer };
+

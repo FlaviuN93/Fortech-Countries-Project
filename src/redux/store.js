@@ -2,6 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {
+	filterCountryReducer,
 	getCountriesReducer,
 	getCountryReducer,
 } from './countriesReducer/countryReducer';
@@ -9,6 +10,7 @@ import {
 const reducer = combineReducers({
 	countriesInfo: getCountriesReducer,
 	countryInfo: getCountryReducer,
+	filteredCountries: filterCountryReducer,
 });
 const middleware = [thunk];
 

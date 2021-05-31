@@ -8,7 +8,7 @@ import FilterOverview from '../components/FilterOverview';
 const HomeScreen = () => {
 	return (
 		<>
-			<Header></Header>
+			<Header />
 			<SearchComponent />
 			<main className='main_container'>
 				<FilterOverview />

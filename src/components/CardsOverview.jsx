@@ -15,24 +15,36 @@ const CardsOverview = () => {
 	const { loading, error, countries } = useSelector(
 		(state) => state.countriesInfo
 	);
+	const {
+		filteredCountries,
+		success,
+		reset,
+		loading: loadingFilter,
+	} = useSelector((state) => state.filteredCountries);
 
 	useEffect(() => {
 		dispatch(getAllCountries(keyword, category));
-	}, [dispatch, keyword, category]);
+		if (reset) {
+			dispatch(getAllCountries(keyword, category));
+		}
+	}, [dispatch, keyword, category, reset]);
 
 	return (
 		<div className='cards-overview'>
-			{loading ? (
+			{loadingFilter ? (
+				<LoadingSpinner />
+			) : success ? (
+				filteredCountries.map((country, index) => (
+					<CardComponent key={index} country={country}></CardComponent>
+				))
+			) : loading ? (
 				<LoadingSpinner />
 			) : error ? (
 				<Message>Results not found. Try again </Message>
 			) : (
-				countries.map(
-					(country, index) =>
-						index < 16 && (
-							<CardComponent key={index} country={country}></CardComponent>
-						)
-				)
+				countries.map((country, index) => (
+					<CardComponent key={index} country={country}></CardComponent>
+				))
 			)}
 		</div>
 	);
