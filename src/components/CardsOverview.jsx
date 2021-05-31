@@ -15,10 +15,16 @@ const CardsOverview = () => {
 	const { loading, error, countries } = useSelector(
 		(state) => state.countriesInfo
 	);
+	const { filteredCountries, success } = useSelector(
+		(state) => state.filteredCountries
+	);
 
 	useEffect(() => {
 		dispatch(getAllCountries(keyword, category));
-	}, [dispatch, keyword, category]);
+		if (success) {
+			dispatch(getAllCountries(keyword, category));
+		}
+	}, [dispatch, keyword, category, success]);
 
 	return (
 		<div className='cards-overview'>

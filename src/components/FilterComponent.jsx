@@ -1,25 +1,19 @@
 import React, { useState } from 'react';
 import { Accordion, Button, Card, Form } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
-import Types from '../redux/countriesReducer/countryTypes';
+import { getFilteredCountries } from '../redux/countriesReducer/countryAction';
 import './FilterComponent.css';
 
 const FilterComponent = ({ categoryNames, title }) => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
-	// const history = useHistory();
-	const dispatch = useDispatch();
 
+	const dispatch = useDispatch();
+	console.log(keyword, category);
 	const onClickHandler = (event) => {
 		event.preventDefault();
 		if (keyword !== '' && category !== '') {
-			dispatch({
-				type: Types.ADD_FILTER_INFO,
-				payload: [category.toLowerCase(), keyword.toLowerCase()],
-			});
-			// 		history.push(
-			// 			`/search/${category.toLowerCase()}/${keyword.toLowerCase()}`
-			// 		);
+			dispatch(getFilteredCountries(category.toLowerCase(), keyword));
 		}
 	};
 

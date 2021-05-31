@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { getCurrentTime } from '../utils/getCurrentTime';
 import './CountryDetails.css';
 import LoadingSpinner from './LoadingSpinner';
 
@@ -53,10 +54,11 @@ const CountryDetails = ({ country, getCountryId }) => {
 								</div>
 								<div>
 									<p>
-										<strong>Timezone: </strong> {timezones[0]}
+										<strong>Timezone: </strong> {timezones}
 									</p>
 									<p>
-										<strong>Current Time: </strong> {}
+										<strong>Current Time: </strong>{' '}
+										{getCurrentTime(timezones[0])}
 									</p>
 									<p>
 										<strong>Code: </strong> {alpha3Code}

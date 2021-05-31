@@ -1,5 +1,6 @@
 import Types from './countryTypes';
 import axios from 'axios';
+import { filterCountries } from './countryUtils';
 
 export const getAllCountries =
 	(keyword = '', category = 'all') =>
@@ -27,15 +28,15 @@ export const getCountryById = (countryId) => async (dispatch) => {
 	}
 };
 
-// export const filterCountries = () => async (dispatch) => {
-// 	try {
-// 		dispatch({ type: Types.FILTER_REQUEST });
-
-// 		const { data } = await axios.get(
-// 			`https://restcountries.eu/rest/v2/${category}/${keyword}`
-// 		);
-// 		dispatch({ payload: data, type: Types.FILTER_SUCCESS });
-// 	} catch (err) {
-// 		dispatch({ payload: err, type: Types.FILTER_FAIL });
-// 	}
-// };
+export const getFilteredCountries =
+	(category = '', keyword = '') =>
+	async (dispatch, getState) => {
+		try {
+			dispatch({ type: Types.FILTER_REQUEST });
+			const { countries } = await getState().countriesInfo;
+			const data = filterCountries(countries, category, keyword);
+			dispatch({ payload: data, type: Types.FILTER_SUCCESS });
+		} catch (err) {
+			dispatch({ payload: err, type: Types.FILTER_FAIL });
+		}
+	};
