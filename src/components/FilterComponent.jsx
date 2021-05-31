@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { getFilteredCountries } from '../redux/countriesReducer/countryAction';
 import './FilterComponent.css';
 
-const FilterComponent = ({ categoryNames, title, categoryId }) => {
+const FilterComponent = ({ categoryNames, title }) => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
 

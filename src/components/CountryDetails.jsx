@@ -54,7 +54,7 @@ const CountryDetails = ({ country, getCountryId }) => {
 								</div>
 								<div>
 									<p>
-										<strong>Timezone: </strong> {timezones}
+										<strong>Timezone: </strong> {timezones[0]}
 									</p>
 									<p>
 										<strong>Current Time: </strong>{' '}
