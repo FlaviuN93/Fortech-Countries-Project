@@ -32,7 +32,7 @@ const CardsOverview = () => {
 	return (
 		<div className='cards-overview'>
 			{filterError ? (
-				<Message error={filterError} />
+				<Message error={filterError}>Incorrect timezone. Try again</Message>
 			) : success ? (
 				filteredCountries.map((country, index) => (
 					<CardComponent key={index} country={country}></CardComponent>

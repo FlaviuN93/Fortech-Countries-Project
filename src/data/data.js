@@ -17,19 +17,19 @@ const filterData = [
 			'French',
 		],
 	},
-	{
-		id: '3',
-		title: 'Currencies',
-		categoryNames: [
-			'Euro',
-			'Dollar',
-			'Pound',
-			'Dinar',
-			'Franc',
-			'Rupee',
-			'Yuan',
-		],
-	},
+	// {
+	// 	id: '3',
+	// 	title: 'Currencies',
+	// 	categoryNames: [
+	// 		'Euro',
+	// 		'Dollar',
+	// 		'Pound',
+	// 		'Dinar',
+	// 		'Franc',
+	// 		'Rupee',
+	// 		'Yuan',
+	// 	],
+	// },
 	{
 		id: '4',
 		title: 'Timezones',

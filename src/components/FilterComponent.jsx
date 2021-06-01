@@ -33,19 +33,21 @@ const FilterComponent = ({ categoryNames, title }) => {
 					</Card.Header>
 					<Accordion.Collapse eventKey='0'>
 						<Card.Body className='card_options'>
-							{
-								// title === 'Timezones' ? (
-								// 	<select class='form-select' aria-label='Default select example'>
-								// 		<option selected>Open this select menu</option>
-								// 		{categoryNames.map((name, index) => {
-								// 			return (
-								// 				<option key={index} value='1'>
-								// 					{name}
-								// 				</option>
-								// 			);
-								// 		})}
-								// 	</select>
-								// ) :
+							{title === 'Timezones' ? (
+								<select
+									className='form-select'
+									aria-label='Default select example'
+									onChange={(el) => setKeyword(el.target.value)}>
+									<option defaultValue>Select Timezone</option>
+									{categoryNames.map((name, index) => {
+										return (
+											<option key={index} value={name}>
+												{name}
+											</option>
+										);
+									})}
+								</select>
+							) : (
 								(title = 'Population'
 									? categoryNames.map((name, index) => (
 											<Form.Check
@@ -67,7 +69,7 @@ const FilterComponent = ({ categoryNames, title }) => {
 												onClick={(el) => setKeyword(el.target.value)}
 											/>
 									  )))
-							}
+							)}
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>
