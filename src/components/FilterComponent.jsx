@@ -33,16 +33,41 @@ const FilterComponent = ({ categoryNames, title }) => {
 					</Card.Header>
 					<Accordion.Collapse eventKey='0'>
 						<Card.Body className='card_options'>
-							{categoryNames.map((name, index) => (
-								<Form.Check
-									key={index}
-									type='radio'
-									name='filter'
-									label={name}
-									value={name}
-									onClick={(el) => setKeyword(el.target.value)}
-								/>
-							))}
+							{
+								// title === 'Timezones' ? (
+								// 	<select class='form-select' aria-label='Default select example'>
+								// 		<option selected>Open this select menu</option>
+								// 		{categoryNames.map((name, index) => {
+								// 			return (
+								// 				<option key={index} value='1'>
+								// 					{name}
+								// 				</option>
+								// 			);
+								// 		})}
+								// 	</select>
+								// ) :
+								(title = 'Population'
+									? categoryNames.map((name, index) => (
+											<Form.Check
+												key={index}
+												type='radio'
+												name='filter'
+												label={name}
+												value={name}
+												onClick={(el) => setKeyword(el.target.value)}
+											/>
+									  ))
+									: categoryNames.map((name, index) => (
+											<Form.Check
+												key={index}
+												type='radio'
+												name='filter'
+												label={name}
+												value={name}
+												onClick={(el) => setKeyword(el.target.value)}
+											/>
+									  )))
+							}
 						</Card.Body>
 					</Accordion.Collapse>
 				</Card>

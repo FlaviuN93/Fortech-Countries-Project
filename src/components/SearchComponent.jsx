@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
 import { Button, Dropdown, Form } from 'react-bootstrap';
+import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router';
+import Types from '../redux/countriesReducer/countryTypes';
 import './SearchComponent.css';
 
 const SearchComponent = () => {
 	const [keyword, setKeyword] = useState('');
 	const [category, setCategory] = useState('');
 	const history = useHistory();
+	const dispatch = useDispatch();
 
 	const submitHandler = (event) => {
 		event.preventDefault();
 		if (category === '' && keyword.trim()) {
+			dispatch({ type: Types.FILTER_RESET });
 			history.push(`/search/name/${keyword}`);
 		} else if (category !== '' && keyword.trim()) {
+			dispatch({ type: Types.FILTER_RESET });
 			history.push(`/search/${category}/${keyword}`);
 		} else {
 			history.push(``);

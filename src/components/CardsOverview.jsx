@@ -15,9 +15,12 @@ const CardsOverview = () => {
 	const { loading, error, countries } = useSelector(
 		(state) => state.countriesInfo
 	);
-	const { filteredCountries, success, reset } = useSelector(
-		(state) => state.filteredCountries
-	);
+	const {
+		filteredCountries,
+		success,
+		reset,
+		error: filterError,
+	} = useSelector((state) => state.filteredCountries);
 
 	useEffect(() => {
 		dispatch(getAllCountries(keyword, category));
@@ -28,7 +31,9 @@ const CardsOverview = () => {
 
 	return (
 		<div className='cards-overview'>
-			{success ? (
+			{filterError ? (
+				<Message error={filterError} />
+			) : success ? (
 				filteredCountries.map((country, index) => (
 					<CardComponent key={index} country={country}></CardComponent>
 				))
