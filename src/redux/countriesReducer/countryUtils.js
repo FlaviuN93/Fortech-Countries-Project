@@ -64,6 +64,8 @@ export const filterCountries = (countries, category, keyword) => {
 		});
 		return filteredTimezone;
 	}
+
+	// DONT KNOW WHY IT DOESN'T WORK: Currency Filters
 	// }
 	// else if (category === 'currencies') {
 	// 	const filteredCurrency = countries.filter((country) => {
@@ -72,6 +74,6 @@ export const filterCountries = (countries, category, keyword) => {
 	// 		});
 	// 	});
 	// 	return filteredCurrency;
-	// Don't know why it doesn't work
+
 	return filterCountries;
 };
