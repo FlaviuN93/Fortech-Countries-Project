@@ -11,6 +11,11 @@
 		grid-column-gap: 2rem;
 	}
 }
+@media only screen and (max-width: 37.5em) {
+	.main_container {
+		grid-template-columns: 1fr;
+	}
+}
 
 .alert_message {
 	position: absolute;
