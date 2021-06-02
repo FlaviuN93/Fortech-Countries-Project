@@ -1,12 +1,19 @@
 .main_container {
 	display: grid;
 	grid-template-columns: minmax(140px, 15%) 1fr;
-	grid-auto-rows: auto;
+	grid-template-rows: repeat(auto, 150px);
 	background-color: #eeefef;
+	position: relative;
 }
 
 @media only screen and (max-width: 54.5em) {
 	.main_container {
 		grid-column-gap: 2rem;
 	}
+}
+
+.alert_message {
+	position: absolute;
+	top: 5%;
+	left: 45%;
 }

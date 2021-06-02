@@ -20,6 +20,7 @@ const FilterOverview = () => {
 				size='lg'
 				value={true}
 				style={{ margin: '1rem 0 2rem 0' }}
+				className='filter_btn'
 				onClick={(e) => setReset(e.target.value)}>
 				Reset Filters
 			</Button>
